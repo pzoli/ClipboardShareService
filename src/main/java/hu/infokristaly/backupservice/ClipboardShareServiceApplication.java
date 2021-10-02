@@ -9,7 +9,7 @@ public class ClipboardShareServiceApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(ClipboardShareServiceApplication.class, args);
-		
+		System.setProperty("java.awt.headless", "false");
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(ClipboardShareServiceApplication.class);
 		builder.headless(false);
 		ConfigurableApplicationContext context = builder.run(args);

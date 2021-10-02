@@ -36,7 +36,6 @@ public class ClipboardController {
 
 	@PostMapping(value = "/post")
 	public void putContentToClipboard(@RequestParam("content") String content) {
-		System.setProperty("java.awt.headless", "false");
 		StringSelection selection = new StringSelection(content);
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(selection, null);
@@ -44,7 +43,6 @@ public class ClipboardController {
 
 	@GetMapping(value = "/get")
 	public String getContentFromClipboard() {
-		System.setProperty("java.awt.headless", "false");
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		String result = "";
 		try {
