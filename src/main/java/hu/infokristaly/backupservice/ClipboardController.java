@@ -74,7 +74,7 @@ public class ClipboardController {
 		QRCodeWriter barcodeWriter = new QRCodeWriter();
 	    BitMatrix bitMatrix = null;
 		try {
-			bitMatrix = barcodeWriter.encode("http://"+hostname+":"+port+"/clipboard/"+type, BarcodeFormat.QR_CODE, 200, 200);
+			bitMatrix = barcodeWriter.encode("http://"+hostname+":"+port+"/clipboard/"+type, BarcodeFormat.QR_CODE, 800, 800);
 		} catch (WriterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
