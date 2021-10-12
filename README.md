@@ -31,3 +31,7 @@ Then start your web browser and open QR code generator page like
 
 Then scann the image with your client program and enjoy the shared content.
 
+# Swagger docs
+
+- http://192.168.1.139:8081/v2/api-docs
+- http://192.168.1.139:8081/swagger-ui/index.html

@@ -43,10 +43,11 @@ public class ClipboardController {
 	}
 
 	@PostMapping(value = "/jsonpost")
-	public void putContentFromJSonToClipboard(@RequestBody ClipboardContent clipboardContent) {
+	public String putContentFromJSonToClipboard(@RequestBody ClipboardContent clipboardContent) {
 		StringSelection selection = new StringSelection(clipboardContent.content);
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(selection, null);
+		return "ready";
 	}
 
 	@GetMapping(value = "/get")
