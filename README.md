@@ -33,5 +33,10 @@ Then scann the image with your client program and enjoy the shared content.
 
 # Swagger docs
 
-- http://192.168.1.139:8081/v2/api-docs
-- http://192.168.1.139:8081/swagger-ui/index.html
+https://medium.com/@hala3k/setting-up-swagger-3-with-spring-boot-2-a7c1c3151545
+
+You can access Swagger docs of RestApi
+
+- http://192.168.1.139:8082/v2/api-docs
+- http://192.168.1.139:8082/swagger-ui/index.html
+
