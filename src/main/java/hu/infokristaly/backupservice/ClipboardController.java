@@ -19,6 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,6 +38,13 @@ public class ClipboardController {
 	@PostMapping(value = "/post")
 	public void putContentToClipboard(@RequestParam("content") String content) {
 		StringSelection selection = new StringSelection(content);
+		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		clipboard.setContents(selection, null);
+	}
+
+	@PostMapping(value = "/jsonpost")
+	public void putContentFromJSonToClipboard(@RequestBody ClipboardContent clipboardContent) {
+		StringSelection selection = new StringSelection(clipboardContent.content);
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(selection, null);
 	}
